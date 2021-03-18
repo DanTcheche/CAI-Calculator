@@ -14,21 +14,6 @@ namespace Calculadora.Interfaz
             string opcionIngresada = null;
             while (opcionIngresada != valorSalir)
             {
-                MostrarMenu();
-                opcionIngresada = PedirOpcionMenu();
-                if (opcionIngresada == 1)
-                {
-                    AgregarArticulo(codigoArticulo, descripcion, precio, articulosIngresados, maximoArticulos);
-                    articulosIngresados++;
-                }
-                else if (opcionIngresada == 2)
-                {
-                    ListarArticulos(codigoArticulo, descripcion, precio, articulosIngresados);
-                }
-                else if (opcionIngresada == valorSalir)
-                {
-                    break;
-                }
 
             }
         }
