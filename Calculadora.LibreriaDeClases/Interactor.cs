@@ -18,17 +18,17 @@ namespace Calculadora.LibreriaDeClases
             return opcionIngresada;
         }
 
-        public static int PedirInt(string mensaje)
+        public static double PedirDouble(string mensaje)
         {
             string valorIngresado = "";
-            int numeroIngresado = -100000;
+            double numeroIngresado = -100000;
             bool valorCorrecto = false;
 
             while (!valorCorrecto || numeroIngresado == -100000)
             {
                 Console.WriteLine($"{mensaje}");
                 valorIngresado = Console.ReadLine();
-                valorCorrecto = Int32.TryParse(valorIngresado, out numeroIngresado);
+                valorCorrecto = Double.TryParse(valorIngresado, out numeroIngresado);
             }
             return numeroIngresado;
         }

@@ -15,9 +15,9 @@ namespace Calculadora.Interfaz
             string opcionIngresada = null;
             while (opcionIngresada != valorSalir)
             {
-                double primerNumero = Interactor.PedirInt("Ingrese el primer digito.");
+                double primerNumero = Interactor.PedirDouble("Ingrese el primer digito.");
                 string operador = Interactor.PedirOperador("Ingrese un operador (-, +, % o *)");
-                double segundoNumero = Interactor.PedirInt("Ingrese el segundo digito.");
+                double segundoNumero = Interactor.PedirDouble("Ingrese el segundo digito.");
                 double resultado = Calculador.CalcularResultado(primerNumero, operador, segundoNumero);
                 Console.WriteLine($"El resultado es: {resultado}");
                 Console.WriteLine("Para salir ingrese X o cualquier otra cosa para continuar");
