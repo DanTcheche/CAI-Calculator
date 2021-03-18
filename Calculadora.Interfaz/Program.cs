@@ -15,14 +15,13 @@ namespace Calculadora.Interfaz
             string opcionIngresada = null;
             while (opcionIngresada != valorSalir)
             {
+                double primerNumero = Interactor.PedirInt("Ingrese el primer digito.");
+                string operador = Interactor.PedirOperador("Ingrese un operador (-, +, % o *)");
+                double segundoNumero = Interactor.PedirInt("Ingrese el segundo digito.");
+                double resultado = Calculador.CalcularResultado(primerNumero, operador, segundoNumero);
+                Console.WriteLine($"El resultado es: {resultado}");
                 Console.WriteLine("Para salir ingrese X o cualquier otra cosa para continuar");
                 opcionIngresada = Interactor.PedirOpcionMenu().ToUpper();
-                Console.WriteLine(opcionIngresada);
-                int primerNumero = Interactor.PedirInt("Ingrese el primer digito.");
-                string operador = Interactor.PedirOperador("Ingrese un operador (-, +, % o *)"); 
-                int segundoNumero = Interactor.PedirInt("Ingrese el primer digito.");
-                float resultado = Calculador.CalcularResultado(primerNumero, operador, segundoNumero);
-                Console.WriteLine($"El resultado es: {resultado}");
             }
         }
     }

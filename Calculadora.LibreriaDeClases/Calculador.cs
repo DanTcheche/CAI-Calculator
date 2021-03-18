@@ -8,14 +8,14 @@ namespace Calculadora.LibreriaDeClases
 {
     public class Calculador
     {
-        public static float CalcularResultado(int primerNumero, string operador, int segundoNumero)
+        public static double CalcularResultado(double primerNumero, string operador, double segundoNumero)
         {
             if(operador == "+") {
                 return primerNumero + segundoNumero;
             } else if (operador == "-") {
                 return primerNumero - segundoNumero;
             } else if (operador == "%") {
-                return primerNumero % segundoNumero;
+                return primerNumero / segundoNumero;
             } else {
                 return primerNumero * segundoNumero;
             }

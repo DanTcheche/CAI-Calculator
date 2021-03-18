@@ -11,7 +11,7 @@ namespace Calculadora.LibreriaDeClases
         public static string PedirOpcionMenu()
         {
             string opcionIngresada = null;
-            while (opcionIngresada == null || opcionIngresada != "X")
+            while (opcionIngresada == null)
             {
                 opcionIngresada = Console.ReadLine().ToUpper();
             }
