@@ -1,4 +1,5 @@
-﻿using Calculadora.LibreriaDeClases.Interfaces;
+﻿using Calculadora.LibreriaDeClases.Estrategias;
+using Calculadora.LibreriaDeClases.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace Calculadora.LibreriaDeClases
             } else if (operador == "%") {
                 this.SetStrategy(new CalculadorDividir());
             } else {
-                return primerNumero * segundoNumero;
+                this.SetStrategy(new CalculadorMultiplicar());
             }
             return this._estrategia.Ejecutar(numeros);
         }
