@@ -41,13 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculador.cs" />
-    <Compile Include="Estrategias\CalculadorSumar.cs" />
-    <Compile Include="Estrategias\CalculadorMultiplicar.cs" />
+    <Compile Include="ValueCalculator.cs" />
+    <Compile Include="Strategies\CalculatorAdd.cs" />
+    <Compile Include="Strategies\CalculatorMultiply.cs" />
     <Compile Include="Interactor.cs" />
-    <Compile Include="Estrategias\IEstrategiaCaluladora.cs" />
-    <Compile Include="Estrategias\CalculadorRestar.cs" />
-    <Compile Include="Estrategias\CalculadorDividir.cs" />
+    <Compile Include="Strategies\ICalculatorStrategy.cs" />
+    <Compile Include="Strategies\CalculatorSubtract.cs" />
+    <Compile Include="Strategies\CalculatorDivide.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

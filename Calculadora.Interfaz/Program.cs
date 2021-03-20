@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Calculadora.LibreriaDeClases;
+using Calculadora.Classes;
+using Calculator.Classes;
 
 namespace Calculadora.Interfaz
 {
@@ -11,27 +12,27 @@ namespace Calculadora.Interfaz
     {
         static void Main(string[] args)
         {
-            string valorSalir = "X";
-            string opcionIngresada = null;
-            double resultado = 0;
-            Calculador calculador = new Calculador();
-            while (opcionIngresada != valorSalir)
+            string exitValue = "X";
+            string enteredValue = null;
+            double result = 0;
+            ValueCalculator calculator = new ValueCalculator();
+            while (enteredValue != exitValue)
             {
-                double primerNumero = Interactor.PedirDouble("Ingrese el primer digito.");
-                string operador = Interactor.PedirOperador("Ingrese un operador (-, +, % o *)");
-                double segundoNumero = Interactor.PedirDouble("Ingrese el segundo digito.");    
+                double firstNumber = Interactor.AskDouble("Enter the first number:");
+                string operatorValue = Interactor.AskOperator("Ingrese un operador (-, +, % o *)");
+                double secondNumber = Interactor.AskDouble("Enter the second number:");    
                 try
                 {
-                    resultado = calculador.CalcularResultado(primerNumero, operador, segundoNumero);
+                    result = calculator.CalculateResult(firstNumber, operatorValue, secondNumber);
                 }
                 catch (DivideByZeroException)
                 {
-                    Console.WriteLine("No se puede dividir por 0");
+                    Console.WriteLine("Cannot divide by 0.");
                     continue;
                 }
-                Console.WriteLine($"El resultado es: {resultado}");
-                Console.WriteLine("Para salir ingrese X o cualquier otra cosa para continuar");
-                opcionIngresada = Interactor.PedirOpcionMenu().ToUpper();
+                Console.WriteLine($"The result is: {result}");
+                Console.WriteLine("To exit type X or type any other thing to continue.");
+                enteredValue = Interactor.AskMenuOption().ToUpper();
             }
         }
     }

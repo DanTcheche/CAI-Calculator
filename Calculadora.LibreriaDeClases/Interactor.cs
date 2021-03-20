@@ -4,48 +4,48 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculadora.LibreriaDeClases
+namespace Calculator.Classes
 {
     public class Interactor
     {
-        public static string PedirOpcionMenu()
+        public static string AskMenuOption()
         {
-            string opcionIngresada = null;
-            while (opcionIngresada == null)
+            string selectedOption = null;
+            while (selectedOption == null)
             {
-                opcionIngresada = Console.ReadLine().ToUpper();
+                selectedOption = Console.ReadLine().ToUpper();
             }
-            return opcionIngresada;
+            return selectedOption;
         }
 
-        public static double PedirDouble(string mensaje)
+        public static double AskDouble(string mensaje)
         {
-            string valorIngresado = "";
-            double numeroIngresado = -100000;
-            bool valorCorrecto = false;
+            string enteredValue = "";
+            double enteredNumber = -100000;
+            bool isCorrectValue = false;
 
-            while (!valorCorrecto || numeroIngresado == -100000)
+            while (!isCorrectValue || enteredNumber == -100000)
             {
                 Console.WriteLine($"{mensaje}");
-                valorIngresado = Console.ReadLine();
-                valorCorrecto = Double.TryParse(valorIngresado, out numeroIngresado);
+                enteredValue = Console.ReadLine();
+                isCorrectValue = Double.TryParse(enteredValue, out enteredNumber);
             }
-            return numeroIngresado;
+            return enteredNumber;
         }
 
-        public static string PedirOperador(string mensaje)
+        public static string AskOperator(string mensaje)
         {
-            string valorIngresado = "";
-            bool valorCorrecto = false;
-            string[] valoresAceptados = { "+", "-", "%", "*" };
+            string enteredValue = "";
+            bool isCorrectValue = false;
+            string[] acceptedValues = { "+", "-", "%", "*" };
 
-            while (!valorCorrecto || valorIngresado == "")
+            while (!isCorrectValue || enteredValue == "")
             {
                 Console.WriteLine($"{mensaje}");
-                valorIngresado = Console.ReadLine();
-                valorCorrecto = valoresAceptados.Contains(valorIngresado);
+                enteredValue = Console.ReadLine();
+                isCorrectValue = acceptedValues.Contains(enteredValue);
             }
-            return valorIngresado;
+            return enteredValue;
         }
     }
 }
