@@ -25,7 +25,8 @@ namespace Calculadora.LibreriaDeClases
                 this.SetStrategy(new CaluladorSumar());
                 return this._estrategia.Ejecutar(numeros);
             } else if (operador == "-") {
-                return primerNumero - segundoNumero;
+                this.SetStrategy(new CaluladorRestar());
+                return this._estrategia.Ejecutar(numeros);
             } else if (operador == "%") {
                 return primerNumero / segundoNumero;
             } else {

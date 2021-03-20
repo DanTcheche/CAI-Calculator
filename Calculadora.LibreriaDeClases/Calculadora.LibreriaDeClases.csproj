@@ -45,6 +45,7 @@
     <Compile Include="CaluladorSumar.cs" />
     <Compile Include="Interactor.cs" />
     <Compile Include="IEstrategiaCaluladora.cs" />
+    <Compile Include="CaluladorRestar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
