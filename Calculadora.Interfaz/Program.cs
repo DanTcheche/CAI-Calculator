@@ -13,6 +13,7 @@ namespace Calculadora.Interfaz
         {
             string valorSalir = "X";
             string opcionIngresada = null;
+            Calculador calculador = new Calculador();
             while (opcionIngresada != valorSalir)
             {
                 double primerNumero = Interactor.PedirDouble("Ingrese el primer digito.");
@@ -22,7 +23,7 @@ namespace Calculadora.Interfaz
                     Console.WriteLine("No se puede dividir por 0");
                     continue;
                 }
-                double resultado = Calculador.CalcularResultado(primerNumero, operador, segundoNumero);
+                double resultado = calculador.CalcularResultado(primerNumero, operador, segundoNumero);
                 Console.WriteLine($"El resultado es: {resultado}");
                 Console.WriteLine("Para salir ingrese X o cualquier otra cosa para continuar");
                 opcionIngresada = Interactor.PedirOpcionMenu().ToUpper();

@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculador.cs" />
+    <Compile Include="CaluladorSumar.cs" />
     <Compile Include="Interactor.cs" />
+    <Compile Include="IEstrategiaCaluladora.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
