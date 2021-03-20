@@ -19,7 +19,7 @@ namespace Calculadora.Interfaz
             while (enteredValue != exitValue)
             {
                 double firstNumber = Interactor.AskDouble("Enter the first number:");
-                string operatorValue = Interactor.AskOperator("Ingrese un operador (-, +, % o *)");
+                string operatorValue = Interactor.AskOperator("Select an operator (-, +, % or *)");
                 double secondNumber = Interactor.AskDouble("Enter the second number:");    
                 try
                 {
