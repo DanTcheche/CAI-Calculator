@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculadora.LibreriaDeClases
 {
-    public class CaluladorSumar : IEstrategiaCaluladora
+    public class CalculadorSumar : IEstrategiaCaluladora
     {
         public double Ejecutar(List<double> data)
         {

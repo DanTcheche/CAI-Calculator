@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculadora.LibreriaDeClases
+namespace Calculadora.LibreriaDeClases.Interfaces
 {
-    public class CaluladorRestar : IEstrategiaCaluladora
+    public class CalculadorDividir : IEstrategiaCaluladora
     {
         public double Ejecutar(List<double> data)
         {
@@ -14,14 +14,18 @@ namespace Calculadora.LibreriaDeClases
             double resultado = 0;
             for (var i = 0; i < numeros.Count; i++)
             {
-                if(i==0)
+                if (i == 0)
                 {
                     resultado += numeros[i];
-                } else
-                {
-                    resultado -= numeros[i];
                 }
-                
+                else
+                {
+                    if (numeros[i] == 0)
+                    {
+                        throw new DivideByZeroException();
+                    }
+                    resultado /= numeros[i];                 
+                }
             }
             return resultado;
         }

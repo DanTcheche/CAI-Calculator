@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Calculadora.LibreriaDeClases.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,16 +23,15 @@ namespace Calculadora.LibreriaDeClases
             numeros.Add(primerNumero);
             numeros.Add(segundoNumero);
             if(operador == "+") {
-                this.SetStrategy(new CaluladorSumar());
-                return this._estrategia.Ejecutar(numeros);
+                this.SetStrategy(new CalculadorSumar());                
             } else if (operador == "-") {
-                this.SetStrategy(new CaluladorRestar());
-                return this._estrategia.Ejecutar(numeros);
+                this.SetStrategy(new CalculadorRestar());
             } else if (operador == "%") {
-                return primerNumero / segundoNumero;
+                this.SetStrategy(new CalculadorDividir());
             } else {
                 return primerNumero * segundoNumero;
             }
+            return this._estrategia.Ejecutar(numeros);
         }
     }
 }
